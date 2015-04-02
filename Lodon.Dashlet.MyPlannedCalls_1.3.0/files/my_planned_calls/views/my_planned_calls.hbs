@@ -1,0 +1,80 @@
+{{!--
+/*
+ * For customization and extended functionality,
+ * please contact martin.forsberg@lodon.se
+ *
+ * Copyright © 2014 Lodon AB, www.lodon.se
+ */
+--}}
+
+<div id='my-planned-calls-today' style="overflow-y:auto; height:220px;">
+<table class="table table-condensed">
+{{!-- Filled using rows.hbs --}}
+</table>
+</div>
+
+<div id='my-planned-calls-due' style="overflow-y:auto; height:220px;display:none;">
+<table class="table table-condensed">
+{{!-- Filled using rows.hbs --}}
+</table>
+</div>
+
+<div id='my-planned-calls-future' style="overflow-y:auto; height:220px;display:none;">
+<table class="table table-condensed">
+{{!-- Filled using rows.hbs --}}
+</table>
+</div>
+
+<div>
+    <form class="form-inline">
+    <table class="table table-condensed">
+	<tr>
+    	<td>{{str "LBL_DASHLET_MY_PLANNED_CALLS_DESCRIPTION"}} 
+    	<td rowspan="2"><textarea id="my-planned-calls-description" style="width:95%;"></textarea></td>
+	</tr>
+    <tr>
+        <td>
+            <div>
+            <label class="radio">
+                <input type="radio" name="my-planned-calls-status-radios" id="my-planned-calls-status-radio1" value="Held">
+                {{str "LBL_DASHLET_MY_PLANNED_CALLS_HELD"}}
+                </label>
+                &nbsp;
+                <label class="radio">
+                <input type="radio" name="my-planned-calls-status-radios" id="my-planned-calls-status-radio2" value="Planned">
+                {{str "LBL_DASHLET_MY_PLANNED_CALLS_PLANNED"}}
+                </label>
+                &nbsp;
+                <label class="radio">
+                <input type="radio" name="my-planned-calls-status-radios" id="my-planned-calls-status-radio3" value="Not Held">
+                {{str "LBL_DASHLET_MY_PLANNED_CALLS_NOT_HELD"}}
+                </label>
+            </div>
+        </td>
+    </tr>
+	<tr>
+	   <td><label>{{str "LBL_DASHLET_MY_PLANNED_CALLS_START_DATE_AND_TIME"}}</label></td>
+    	<td>
+            <input style="width: 80px;" type="text" class="span2" value="" placeholder="yyyy-mm-dd" id="my-planned-calls-dp" rel="datepicker">
+            <input type="text" class="span2" placeholder="hh:mm" id="my-planned-calls-tp" rel="timepicker" style="width:50px;">    
+        </td>
+	</tr>
+	<tr>
+	   <td><label>{{str "LBL_DASHLET_MY_PLANNED_CALLS_DURATION"}}</label></td>
+	   <td><input type="text" id="my-planned-calls-duration-h" style="width:25px;" value="0">
+            <select id="my-planned-calls-duration-m" style="width:60px;">
+                <option>0</option>
+                <option>15</option>
+                <option>30</option>
+                <option>45</option>
+            </select>
+
+            <div class="pull-right">
+                <button class="btn" id="my-planned-calls-save">&nbsp;{{str "LBL_DASHLET_MY_PLANNED_CALLS_SAVE"}}&nbsp;</button>
+                <button class="btn" id="my-planned-calls-cancel">&nbsp;{{str "LBL_DASHLET_MY_PLANNED_CALLS_CANCEL"}}&nbsp;</button>
+            </div>
+	   </td>
+	</tr>
+    </table>
+    </form>
+</div>

@@ -1,0 +1,67 @@
+{{!--
+/*
+ * For customization and extended functionality,
+ * please contact martin.forsberg@lodon.se
+ *
+ * Copyright © 2014 Lodon AB, www.lodon.se
+ */
+--}}
+
+<div data-dashlet="widget" class="widget-content" style="margin: 0px;">
+    <div>
+        <form class="form-inline">
+            <ul class="unstyled">
+                <li>{{str "LBL_DASHLET_QUICK_CREATE_MEETING_DESCRIPTION"}}<br>
+                     <textarea id="quick-create-meeting-description" style="width:96%"></textarea>
+                </li>
+                <li>
+                    {{#if account_contacts}}
+                        <select id="quick-create-meeting-contacts" style="width:100%">
+                            {{#each account_contacts}}
+                                <option value='{"id":"{{id}}","full_name":"{{full_name}}"}'>{{full_name}}</option>
+                            {{/each}}
+                        </select>
+                    {{/if}}
+                    
+                    {{#if only_contacts}}
+                        {{#each only_contacts}}
+                        <input id="quick-create-meeting-contacts" type="hidden" value='{"id":"{{id}}","full_name":"{{full_name}}"}'>
+                        {{/each}}
+                    {{/if}}
+                    
+                </li>
+                <li>
+                    <table>
+                        <tr>
+                            <td><label>{{str "LBL_DASHLET_QUICK_CREATE_MEETING_START_DATE_AND_TIME"}}:&nbsp;</label>
+                            </td>
+                            <td>
+                                <input style="width:90px;" type="text" class="span2" value="" placeholder="yyyy-mm-dd" id="quick-create-meeting-dp" rel="datepicker">
+                                <input type="text" class="span2" placeholder="hh:mm" id="quick-create-meeting-tp" rel="timepicker" style="width:50px;"> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>{{str "LBL_DASHLET_QUICK_CREATE_MEETING_DURATION"}}:&nbsp;</label>
+                            </td>
+                            <td>
+                            <input type="text" id="quick-create-meeting-duration-h" style="width:25px;" value="0">
+                            <select id="quick-create-meeting-duration-m" style="width:60px;">
+                                <option>0</option>
+                                <option selected>15</option>
+                                <option>30</option>
+                                <option>45</option>
+                            </select>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="pull-right">
+                    <button class="btn" id="quick-create-meeting-save">
+                    &nbsp;{{str "LBL_DASHLET_QUICK_CREATE_MEETING_SAVE"}}&nbsp;
+                    </button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>

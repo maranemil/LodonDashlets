@@ -1,0 +1,25 @@
+<tbody>
+{{#each rows}}
+<tr class="my-planned-calls-row">
+    <td>
+        <div class="label label-module-mini label-{{parent_type}} pull-left">{{parent_type_substr}}</div>
+    </td>
+    <td>
+        <div>
+            <a rel="mpc-tooltip" data-toggle="tooltip" data-placement="top" title="{{description}}"
+            data-obj-id="{{id}}" name="my-planned-calls-call" href="#">{{name}}</a> >> {{contact_name}} >> 
+            <a href="/#{{parent_type}}/{{parent_id}}">{{related_to}}</a>
+        </div>
+        <div>
+            {{date_start}}
+            {{#if phone_work}}
+            <span style="color:gray;">&nbsp;|</span>&nbsp;&nbsp;{{str "LBL_DASHLET_MY_PLANNED_CALLS_OFFICE"}}: {{phone_work}} 
+            {{/if}}
+            {{#if phone_mobile}}
+            <span style="color:gray;">&nbsp;|</span>&nbsp;&nbsp;{{str "LBL_DASHLET_MY_PLANNED_CALLS_MOBILE"}}: {{phone_mobile}} 
+            {{/if}}
+        </div>
+    </td>
+</tr>
+{{/each}}
+</tbody>
