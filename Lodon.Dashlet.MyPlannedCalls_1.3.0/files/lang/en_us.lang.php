@@ -1,5 +1,7 @@
 <?php
-if(!defined('sugarEntry'))define('sugarEntry', true);
+if (!defined('sugarEntry')) {
+    define('sugarEntry', true);
+}
 
 $app_strings['LBL_DASHLET_MY_PLANNED_CALLS_NAME'] = 'My Planned Calls';
 $app_strings['LBL_DASHLET_MY_PLANNED_CALLS_DESCRIPTION_TEXT'] = 'This dashlet allows you to view and edit planned calls.';

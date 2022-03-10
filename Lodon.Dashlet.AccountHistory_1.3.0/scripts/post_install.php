@@ -1,6 +1,10 @@
- 
 <?php
-if (! defined('sugarEntry') || ! sugarEntry) die('Not A Valid Entry Point');
+
+/** @noinspection PhpUnused */
+
+if (! defined('sugarEntry') || ! sugarEntry) {
+    die('Not A Valid Entry Point');
+}
  
 function post_install() {
 	$autoexecute = false; //execute the SQL

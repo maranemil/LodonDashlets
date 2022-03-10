@@ -1,5 +1,7 @@
 <?php
-if(!defined('sugarEntry'))define('sugarEntry', true);
+if (!defined('sugarEntry')) {
+    define('sugarEntry', true);
+}
 
 $app_strings['LBL_DASHLET_QUICK_CREATE_CALL_NAME'] = 'Quick Create Call';
 $app_strings['LBL_DASHLET_QUICK_CREATE_CALL_DESCRIPTION_TEXT'] = 'This dashlet allows you to quickly and easily log calls for accounts and contacts.';
